@@ -1,0 +1,107 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;0,800;0,900;1,400;1,700&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+
+@layer base {
+  html { scroll-behavior: smooth; }
+
+  body {
+    @apply font-body text-aubergine-500;
+    background-color: #f7f3e8;
+    /* subtle paper grain */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+    font-feature-settings: "kern" 1, "liga" 1;
+  }
+
+  h1,h2,h3,h4,h5,h6 { @apply font-serif; }
+
+  ::selection {
+    background-color: #352741;
+    color: #f7f3e8;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-7 py-3.5 rounded-xl
+           bg-aubergine-500 text-creme-200 font-body font-semibold text-sm tracking-wide
+           transition-all duration-300
+           hover:bg-aubergine-600 hover:shadow-monument hover:-translate-y-0.5
+           focus:outline-none focus:ring-2 focus:ring-aubergine-400 focus:ring-offset-2;
+  }
+  .btn-gold {
+    @apply inline-flex items-center justify-center px-7 py-3.5 rounded-xl
+           bg-gold-500 text-aubergine-900 font-body font-semibold text-sm tracking-wide
+           transition-all duration-300
+           hover:bg-gold-400 hover:shadow-gold hover:-translate-y-0.5
+           focus:outline-none focus:ring-2 focus:ring-gold-400 focus:ring-offset-2;
+  }
+  .btn-outline-creme {
+    @apply inline-flex items-center justify-center px-7 py-3.5 rounded-xl
+           border-2 border-creme-200/60 text-creme-200 font-body font-semibold text-sm tracking-wide
+           bg-transparent transition-all duration-300
+           hover:bg-creme-200/10 hover:border-creme-200 hover:-translate-y-0.5;
+  }
+
+  /* Decorative ornament divider */
+  .ornament-divider {
+    @apply flex items-center justify-center gap-4 py-2;
+  }
+  .ornament-divider::before,
+  .ornament-divider::after {
+    content: '';
+    @apply flex-1 h-px;
+    background: linear-gradient(90deg, transparent, #35274130);
+  }
+  .ornament-divider::after {
+    background: linear-gradient(90deg, #35274130, transparent);
+  }
+
+  .section-divider {
+    @apply h-px w-full;
+    background: linear-gradient(90deg, transparent 0%, #352741 30%, #d4a843 50%, #352741 70%, transparent 100%);
+  }
+
+  .section-eyebrow {
+    @apply inline-block font-body text-xs font-semibold tracking-widest uppercase mb-3;
+    color: #d4a843;
+  }
+
+  /* Purple card with gold hover border */
+  .card-purple {
+    @apply transition-all duration-300;
+    background: #352741;
+    border: 1px solid transparent;
+    border-radius: 0;
+  }
+  .card-purple:hover {
+    border-color: rgba(212, 168, 67, 0.3);
+    box-shadow: 0 8px 32px rgba(53, 39, 65, 0.25);
+  }
+
+  /* ── Skull-border wrapper – reusable ── */
+  .skull-card-wrapper {
+    background-color: #201727;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cellipse cx='10' cy='8.5' rx='6' ry='6' fill='%23d4a843' opacity='0.8'/%3E%3Ccircle cx='7' cy='8' r='1.8' fill='%23201727'/%3E%3Ccircle cx='13' cy='8' r='1.8' fill='%23201727'/%3E%3Cpath d='M9.2 11 L10 12.3 L10.8 11Z' fill='%23201727'/%3E%3Crect x='6' y='12.5' width='8' height='3.5' rx='1.5' fill='%23d4a843' opacity='0.8'/%3E%3Crect x='7.3' y='13' width='1.2' height='2.8' fill='%23201727'/%3E%3Crect x='9.4' y='13' width='1.2' height='2.8' fill='%23201727'/%3E%3Crect x='11.5' y='13' width='1.2' height='2.8' fill='%23201727'/%3E%3C/svg%3E");
+    background-size: 20px 20px;
+    padding: 12px;
+    border-radius: 0;
+  }
+  .skull-card-wrapper-sm {
+    background-color: #201727;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cellipse cx='10' cy='8.5' rx='6' ry='6' fill='%23d4a843' opacity='0.8'/%3E%3Ccircle cx='7' cy='8' r='1.8' fill='%23201727'/%3E%3Ccircle cx='13' cy='8' r='1.8' fill='%23201727'/%3E%3Cpath d='M9.2 11 L10 12.3 L10.8 11Z' fill='%23201727'/%3E%3Crect x='6' y='12.5' width='8' height='3.5' rx='1.5' fill='%23d4a843' opacity='0.8'/%3E%3Crect x='7.3' y='13' width='1.2' height='2.8' fill='%23201727'/%3E%3Crect x='9.4' y='13' width='1.2' height='2.8' fill='%23201727'/%3E%3Crect x='11.5' y='13' width='1.2' height='2.8' fill='%23201727'/%3E%3C/svg%3E");
+    background-size: 20px 20px;
+    padding: 9px;
+    border-radius: 0;
+  }
+  /* Inner card sitting inside skull wrapper */
+  .skull-card-inner {
+    background: #352741;
+    border-radius: 0;
+    overflow: hidden;
+  }
+
+  .container-section { @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8; }
+}
