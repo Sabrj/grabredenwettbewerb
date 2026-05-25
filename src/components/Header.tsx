@@ -90,32 +90,23 @@ export default function Header() {
             {/* Right side */}
             <div className="flex items-center gap-3">
 
-              {/* Admin / Login — desktop */}
-              <div className="hidden md:flex items-center gap-3">
-                {isAdmin ? (
-                  <>
-                    <span
-                      className="font-body text-xs font-semibold uppercase tracking-widest px-2.5 py-1"
-                      style={{ background: "rgba(212,168,67,0.12)", color: "#d4a843", border: "1px solid rgba(212,168,67,0.3)", borderRadius: 0 }}
-                    >
-                      Admin
-                    </span>
-                    <button
-                      onClick={handleLogout}
-                      className="font-body text-sm text-gray-400 hover:text-red-500 transition-colors"
-                    >
-                      Abmelden
-                    </button>
-                  </>
-                ) : (
-                  <Link
-                    href="/login"
-                    className="font-body text-sm font-medium text-gray-500 hover:text-aubergine-500 transition-colors"
+              {/* Admin indicator — only when logged in */}
+              {isAdmin && (
+                <div className="hidden md:flex items-center gap-3">
+                  <span
+                    className="font-body text-xs font-semibold uppercase tracking-widest px-2.5 py-1"
+                    style={{ background: "rgba(212,168,67,0.12)", color: "#d4a843", border: "1px solid rgba(212,168,67,0.3)", borderRadius: 0 }}
                   >
-                    Login
-                  </Link>
-                )}
-              </div>
+                    Admin
+                  </span>
+                  <button
+                    onClick={handleLogout}
+                    className="font-body text-sm text-gray-400 hover:text-red-500 transition-colors"
+                  >
+                    Abmelden
+                  </button>
+                </div>
+              )}
 
               {/* Mobile hamburger – single one */}
               <button

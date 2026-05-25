@@ -73,7 +73,7 @@ export default function IntroSection() {
 
             <motion.p variants={item}>
               Die literarischen Figuren aus unseren Lieblingsbüchern sind treue
-              BegleiterInnen unserer Lebens- und Vorstellungswelten. Wir wollen sie
+              Begleiter:innen unserer Lebens- und Vorstellungswelten. Wir wollen sie
               nicht missen.
             </motion.p>
 

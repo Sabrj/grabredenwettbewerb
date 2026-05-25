@@ -27,11 +27,10 @@ export default function Footer() {
                 src="/logo.png"
                 alt="1. Wiener Grabredenwettbewerb"
                 width={180} height={70}
-                className="h-12 w-auto object-contain opacity-80 group-hover:opacity-100 transition-opacity"
+                className="h-12 w-auto object-contain opacity-70 group-hover:opacity-100 transition-opacity" style={{ filter: "brightness(0) invert(1)" }}
               />
             </Link>
             <p className="font-body text-xs leading-relaxed text-creme-200/35 max-w-[200px]">
-              Wo Trauer Kunst wird.<br/>
               Der erste Wiener Grabredenwettbewerb &ndash; 2026.
             </p>
           </div>
@@ -77,12 +76,12 @@ export default function Footer() {
           {/* Contact + Newsletter */}
           <div>
             <h3 className="font-serif text-creme-200 font-semibold text-sm mb-5">Kontakt</h3>
-            <a href="mailto:meinerede@grabredenwettbewerb.at"
+            <a href="mailto:info@grabredenwettbewerb.at"
               className="font-body text-sm hover:text-creme-200 transition-colors flex items-center gap-2 mb-6">
               <svg className="w-4 h-4 text-gold-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
               </svg>
-              meinerede@grabredenwettbewerb.at
+              info@grabredenwettbewerb.at
             </a>
             <p className="font-serif text-creme-200/60 font-semibold text-xs mb-2 uppercase tracking-wide">Newsletter</p>
             <NewsletterSignup variant="dark" compact={true} />

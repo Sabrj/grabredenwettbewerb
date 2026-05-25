@@ -21,13 +21,7 @@ export default function EventInfoSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <span className="section-eyebrow mb-3 block">Wo &amp; Wann</span>
-            <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-black text-creme-200 leading-tight mb-3">
-              Unser 1. Event
-            </h2>
-            <p className="font-body text-creme-200/45 text-sm mb-8">
-              Erstmals auf der Bühne – Wien, November 2026.
-            </p>
+            <span className="section-eyebrow mb-6 block">Wo &amp; Wann</span>
 
             <div className="space-y-5">
               <div className="flex items-start gap-4">

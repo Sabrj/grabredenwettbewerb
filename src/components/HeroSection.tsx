@@ -15,7 +15,7 @@ export default function HeroSection() {
       />
       {/* Fade into page background */}
       <div
-        className="absolute bottom-0 left-0 right-0 h-32 pointer-events-none"
+        className="absolute bottom-0 left-0 right-0 h-16 md:h-32 pointer-events-none"
         style={{ background: "linear-gradient(to bottom, transparent, #f7f3e8)" }}
         aria-hidden="true"
       />
