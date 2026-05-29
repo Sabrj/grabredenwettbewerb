@@ -43,6 +43,7 @@ export default function Footer() {
                 ["/",           "Startseite"],
                 ["/programm",   "Infos / Programm"],
                 ["/kontakt",    "Kontakt"],
+                ["/login",      "Login"],
               ].map(([href, label]) => (
                 <li key={href}>
                   <Link href={href} className="font-body text-sm hover:text-creme-200 transition-colors duration-200">
