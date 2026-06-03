@@ -80,6 +80,34 @@ export default function DatenschutzPage() {
               </p>
             </Section>
 
+            <Section title="Newsletter">
+              <p>
+                Wenn Sie sich für unseren Newsletter anmelden, wird Ihre E-Mail-Adresse zum Zweck
+                der Zusendung des Newsletters verarbeitet. Rechtsgrundlage ist Ihre Einwilligung
+                gemäß Art. 6 Abs. 1 lit. a DSGVO.
+              </p>
+              <p>
+                Wir nutzen für den Versand des Newsletters den Dienst{" "}
+                <strong className="text-aubergine-500">Mailchimp</strong> (The Rocket Science Group LLC,
+                675 Ponce de Leon Ave NE, Suite 5000, Atlanta, GA 30308, USA). Mailchimp ist nach dem
+                EU-US Data Privacy Framework zertifiziert. Die Übermittlung in die USA erfolgt auf
+                Grundlage von Standardvertragsklauseln gemäß Art. 46 DSGVO.
+              </p>
+              <p>
+                Wir verwenden das Double-Opt-in-Verfahren: Nach Ihrer Anmeldung erhalten Sie eine
+                Bestätigungs-E-Mail. Erst nach Bestätigung wird Ihre Adresse in die Verteilerliste
+                aufgenommen. Sie können den Newsletter jederzeit über den Abmeldelink in jeder
+                Newsletter-E-Mail abbestellen.
+              </p>
+              <p>
+                Datenschutzerklärung von Mailchimp:{" "}
+                <a href="https://mailchimp.com/legal/privacy/" target="_blank" rel="noopener noreferrer"
+                  className="underline underline-offset-2 hover:text-gold-500 transition-colors">
+                  mailchimp.com/legal/privacy
+                </a>
+              </p>
+            </Section>
+
             <Section title="Ihre Rechte">
               <p>Ihnen stehen bezüglich Ihrer bei uns gespeicherten Daten grundsätzlich folgende Rechte zu:</p>
               <ul className="list-disc list-inside space-y-1 pl-2">

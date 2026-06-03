@@ -91,6 +91,13 @@ export default function NewsletterSignup({ variant = "light", compact = false }:
         </button>
       </div>
       {error && <p className="mt-1 font-body text-xs text-red-400">{error}</p>}
+      <p className={`mt-2 font-body leading-relaxed ${compact ? "text-[10px]" : "text-xs"} ${isDark ? "text-creme-200/30" : "text-aubergine-500/40"}`}>
+        Mit der Anmeldung stimmen Sie der Verarbeitung Ihrer E-Mail-Adresse durch Mailchimp gemäß unserer{" "}
+        <a href="/datenschutz" className={`underline underline-offset-2 ${isDark ? "hover:text-creme-200/60" : "hover:text-aubergine-500/70"} transition-colors`}>
+          Datenschutzerklärung
+        </a>{" "}
+        zu. Abmeldung jederzeit möglich.
+      </p>
     </form>
   );
 }
