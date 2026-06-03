@@ -26,7 +26,7 @@ function B({ children }: { children: string }) {
 }
 
 const bedingungen: { nr: string; text: string }[] = [
-  { nr: "01", text: "Die Grabrede darf **ausschließlich auf eine fiktive, literarische Figur** geschrieben werden." },
+  { nr: "01", text: "Die Grabrede darf **ausschließlich auf eine fiktive, literarische Figur** geschrieben werden. Die Figur muss in der Vorlage nicht verstorben sein." },
   { nr: "02", text: "Die Rede darf in vorgetragenem Zustand **maximal 8 Minuten** dauern." },
   { nr: "03", text: "**Pro Teilnehmer:in darf ein Text** eingereicht werden." },
   { nr: "04", text: "**Texte können nur in deutscher Sprache** eingereicht werden." },
