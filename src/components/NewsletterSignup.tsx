@@ -11,18 +11,33 @@ export default function NewsletterSignup({ variant = "light", compact = false }:
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
   const isDark = variant === "dark";
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // RFC 5321-inspired: local@domain, max 254 chars, no obvious junk
-    const EMAIL_RE = /^[^\s@]{1,64}@[^\s@]{1,255}\.[^\s@]{2,}$/;
-    if (!EMAIL_RE.test(email) || email.length > 254) {
-      setError("Bitte gültige E-Mail-Adresse eingeben.");
-      return;
-    }
     setError("");
-    setSubmitted(true);
+    setLoading(true);
+
+    try {
+      const res = await fetch("/api/newsletter/subscribe", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
+
+      const data = await res.json() as { ok?: boolean; error?: string };
+
+      if (res.ok && data.ok) {
+        setSubmitted(true);
+      } else {
+        setError(data.error ?? "Anmeldung fehlgeschlagen. Bitte versuchen Sie es erneut.");
+      }
+    } catch {
+      setError("Verbindungsfehler. Bitte versuchen Sie es erneut.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   if (submitted) {
@@ -36,7 +51,7 @@ export default function NewsletterSignup({ variant = "light", compact = false }:
         <svg className="w-4 h-4 text-gold-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7"/>
         </svg>
-        <span>Danke! Bestätigung folgt.</span>
+        <span>Danke! Bitte bestätigen Sie Ihre E-Mail.</span>
       </div>
     );
   }
@@ -50,7 +65,8 @@ export default function NewsletterSignup({ variant = "light", compact = false }:
           onChange={(e) => { setEmail(e.target.value); setError(""); }}
           placeholder="E-Mail-Adresse"
           required
-          className={`w-full bg-transparent border focus:outline-none focus:ring-1 focus:ring-gold-400/50 transition-colors font-body ${
+          disabled={loading}
+          className={`w-full bg-transparent border focus:outline-none focus:ring-1 focus:ring-gold-400/50 transition-colors font-body disabled:opacity-50 ${
             compact ? "px-3 py-1.5 text-xs" : "px-4 py-3 text-sm"
           } ${
             isDark
@@ -61,7 +77,8 @@ export default function NewsletterSignup({ variant = "light", compact = false }:
         />
         <button
           type="submit"
-          className={`w-full font-body font-semibold transition-colors ${
+          disabled={loading}
+          className={`w-full font-body font-semibold transition-colors disabled:opacity-60 ${
             compact ? "px-3 py-1.5 text-xs" : "px-5 py-2.5 text-sm"
           } ${
             isDark
@@ -70,7 +87,7 @@ export default function NewsletterSignup({ variant = "light", compact = false }:
           }`}
           style={{ borderRadius: 0 }}
         >
-          Anmelden
+          {loading ? "Wird gesendet…" : "Anmelden"}
         </button>
       </div>
       {error && <p className="mt-1 font-body text-xs text-red-400">{error}</p>}
