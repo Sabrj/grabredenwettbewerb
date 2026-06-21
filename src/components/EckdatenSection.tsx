@@ -108,7 +108,7 @@ export default function EckdatenSection() {
             {[
               { src: "/ember_logo.png",        alt: "Ember-Glass",               href: "https://ember-glass.com" },
               { src: "/logo_stadtkino.png",    alt: "Stadtkino im Künstlerhaus", href: "https://www.stadtkinowien.at" },
-              { src: "/logo-gutbehuetet.jpg",  alt: "Gut Behütet",               href: "#" },
+              { src: "/logo-gutbehuetet.jpg",  alt: "Gut Behütet",               href: "https://www.gutbehuetet.com" },
             ].map((s, i) => (
               <motion.div key={s.href} style={SW_SM}
                 initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }}
@@ -117,7 +117,7 @@ export default function EckdatenSection() {
                 <a href={s.href} target="_blank" rel="noopener noreferrer"
                   className="flex items-center justify-center p-6"
                   style={{ background: "#352741", borderRadius: 0 }}>
-                  <Image src={s.src} alt={s.alt} width={240} height={120}
+                  <Image src={s.src} alt={s.alt} width={240} height={120} unoptimized
                     className="h-14 w-auto object-contain max-w-[160px]" />
                 </a>
               </motion.div>
