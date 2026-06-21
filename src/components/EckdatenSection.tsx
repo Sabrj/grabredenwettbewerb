@@ -104,10 +104,11 @@ export default function EckdatenSection() {
           </div>
 
           {/* Weitere Sponsoren */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 max-w-lg mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 max-w-2xl mx-auto">
             {[
-              { src: "/ember_logo.png",      alt: "Ember-Glass",               href: "https://ember-glass.com" },
-              { src: "/logo_stadtkino.png",  alt: "Stadtkino im Künstlerhaus", href: "https://www.stadtkinowien.at" },
+              { src: "/ember_logo.png",        alt: "Ember-Glass",               href: "https://ember-glass.com" },
+              { src: "/logo_stadtkino.png",    alt: "Stadtkino im Künstlerhaus", href: "https://www.stadtkinowien.at" },
+              { src: "/logo-gutbehuetet.jpg",  alt: "Gut Behütet",               href: "#" },
             ].map((s, i) => (
               <motion.div key={s.href} style={SW_SM}
                 initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }}

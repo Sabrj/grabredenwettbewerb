@@ -33,7 +33,7 @@ const bedingungen: { nr: string; text: string }[] = [
   { nr: "05", text: "Der Text muss selbst geschrieben sein; Zitate und Übersetzungen sind als solche auszuweisen. **Die Verwendung von KI-Tools ist nicht erlaubt und führt zum Ausschluss.**" },
   { nr: "06", text: "Die ausgewählten Autor:innen verpflichten sich, **am Sonntag, 8. November 2026 im Stadtkino im Künstlerhaus (1010 Wien)** ihren Text live vor Publikum und Jury zu präsentieren." },
   { nr: "07", text: "Für Text und Präsentation erhalten die Finalist:innen jeweils **ein Honorar von 100 €**. Der Gewinnerbeitrag wird zusätzlich mit einer Trophäe prämiert." },
-  { nr: "08", text: "Einreichungen sind **ausschließlich per E-Mail an MeineRede@grabredenwettbewerb.at** möglich." },
+  { nr: "08", text: "Einreichungen sind **per E-Mail an MeineRede@grabredenwettbewerb.at** oder durch **persönliche Abgabe in der Buchhandlung Analog** möglich." },
   { nr: "09", text: "**Einreichschluss ist 23:59 Uhr am Montag, 31. August 2026.** Der Rechtsweg ist ausgeschlossen." },
   { nr: "10", text: "Bei der Einreichung sind **Kontaktdaten (Name, E-Mail, Telefon) anzugeben**. Mit der Einreichung erklären Sie sich mit diesen Bedingungen einverstanden. Die Einreichung kann bis zur Entscheidung der Vorauswahl jederzeit zurückgezogen werden." },
 ];
