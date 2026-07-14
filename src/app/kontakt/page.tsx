@@ -144,6 +144,76 @@ export default function KontaktPage() {
               </div>
             </div>
 
+            {/* Credits */}
+            <div>
+              <h2 className="font-serif text-3xl font-black text-aubergine-500 text-center mb-10">
+                Credits
+              </h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+
+                {/* Philip Jankovic */}
+                <div className="overflow-hidden" style={{ background: "#352741" }}>
+                  <div className="p-8 flex flex-col gap-5">
+                    <Image
+                      src="/logo-philip-jankovic.png"
+                      alt="New Horizons Design – Philip Jankovic"
+                      width={200}
+                      height={200}
+                      unoptimized
+                      className="w-auto h-24 object-contain"
+                    />
+                    <div className="space-y-2 font-body text-sm text-creme-200/70">
+                      <p className="font-semibold text-creme-200 text-base">Philip Jankovic</p>
+                      <p>Vielen Dank an Philip Jankovic für das Design unseres Logos, der Plakate und aller Grafiken.</p>
+                    </div>
+                    <a
+                      href="https://philip-jankovic.com/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-gold-400 font-body text-sm font-semibold hover:text-gold-300 transition-colors"
+                    >
+                      philip-jankovic.com
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
+                          d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+
+                {/* KS Studio 61 */}
+                <div className="overflow-hidden" style={{ background: "#352741" }}>
+                  <div className="p-8 flex flex-col gap-5">
+                    <Image
+                      src="/logo-ks-studio61.png"
+                      alt="KS Studio 61"
+                      width={200}
+                      height={200}
+                      unoptimized
+                      className="w-auto h-24 object-contain brightness-0 invert"
+                    />
+                    <div className="space-y-2 font-body text-sm text-creme-200/70">
+                      <p className="font-semibold text-creme-200 text-base">KS Studio 61</p>
+                      <p>Vielen Dank an KS Studio 61 für die Konzeption und Entwicklung dieser Website.</p>
+                    </div>
+                    <a
+                      href="https://ks-studio61.de"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-gold-400 font-body text-sm font-semibold hover:text-gold-300 transition-colors"
+                    >
+                      ks-studio61.de
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
+                          d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
             {/* Footer links */}
             <div className="text-center pt-4">
               <p className="font-body text-sm text-aubergine-500/40">

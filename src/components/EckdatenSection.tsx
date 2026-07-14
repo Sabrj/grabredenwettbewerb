@@ -125,6 +125,51 @@ export default function EckdatenSection() {
           </div>
         </motion.div>
 
+        {/* Divider */}
+        <div className="flex items-center gap-4 my-8 max-w-2xl mx-auto">
+          <div className="flex-1 h-px" style={{ background: "rgba(53,39,65,0.12)" }} />
+          <svg width="16" height="16" viewBox="0 0 20 20" className="opacity-25 flex-shrink-0" aria-hidden="true">
+            <ellipse cx="10" cy="8.5" rx="6" ry="6" fill="#352741"/>
+            <circle cx="7" cy="8" r="1.8" fill="#f7f3e8"/>
+            <circle cx="13" cy="8" r="1.8" fill="#f7f3e8"/>
+            <rect x="6" y="12.5" width="8" height="3.5" fill="#352741"/>
+            <rect x="7.3" y="13" width="1.2" height="2.8" fill="#f7f3e8"/>
+            <rect x="9.4" y="13" width="1.2" height="2.8" fill="#f7f3e8"/>
+            <rect x="11.5" y="13" width="1.2" height="2.8" fill="#f7f3e8"/>
+          </svg>
+          <div className="flex-1 h-px" style={{ background: "rgba(53,39,65,0.12)" }} />
+        </div>
+
+        {/* Credits */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <p className="font-body text-xs font-semibold uppercase tracking-widest text-aubergine-500/40 text-center mb-5">
+            Credits
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 max-w-lg mx-auto">
+            {[
+              { src: "/logo-philip-jankovic.png", alt: "Philip Jankovic – Design", href: "https://philip-jankovic.com/", invert: false },
+              { src: "/logo-ks-studio61.png",     alt: "KS Studio 61 – Webentwicklung", href: "https://ks-studio61.de", invert: true },
+            ].map((c, i) => (
+              <motion.div key={c.href} style={SW_SM}
+                initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }} transition={{ delay: i * 0.08 }}
+                whileHover={{ y: -4, scale: 1.02 }}>
+                <a href={c.href} target="_blank" rel="noopener noreferrer"
+                  className="flex items-center justify-center p-6"
+                  style={{ background: "#352741", borderRadius: 0 }}>
+                  <Image src={c.src} alt={c.alt} width={200} height={100} unoptimized
+                    className={`h-14 w-auto object-contain max-w-[160px]${c.invert ? " brightness-0 invert" : ""}`} />
+                </a>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+
       </div>
     </section>
   );
