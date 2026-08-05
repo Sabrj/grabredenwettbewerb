@@ -2,8 +2,8 @@
 
 import { useState, useEffect } from "react";
 
-// Einreichschluss: 31. August 2026, 23:59 Uhr Wien (CEST = UTC+2)
-const DEADLINE = new Date("2026-08-31T23:59:00+02:00");
+// Einreichschluss: 30. September 2026, 23:59 Uhr Wien (CEST = UTC+2)
+const DEADLINE = new Date("2026-09-30T23:59:00+02:00");
 
 interface T { days: number; hours: number; minutes: number; seconds: number; expired: boolean }
 
