@@ -34,7 +34,7 @@ export default function EventInfoSection() {
                 </div>
                 <div>
                   <p className="font-serif font-bold text-creme-200 text-lg">Sonntag, 8. November 2026</p>
-                  <p className="font-body text-creme-200/50 text-sm mt-0.5">Einreichschluss: Montag, 31. August 2026</p>
+                  <p className="font-body text-creme-200/50 text-sm mt-0.5">Einreichschluss: Mittwoch, 30. September 2026</p>
                 </div>
               </div>
 

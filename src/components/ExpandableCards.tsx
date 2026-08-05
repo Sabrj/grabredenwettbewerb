@@ -71,7 +71,7 @@ export default function ExpandableCards() {
                       müssen wir alle das Zeitliche segnen. Das gilt auch für Romanfiguren.
                     </p>
                     <p>
-                      Über den Sommer trifft die Buchhandlung Analog eine Auswahl &ndash; die
+                      Im Herbst trifft die Buchhandlung Analog eine Auswahl &ndash; die
                       Verfasser:innen der besten Reden werden eingeladen, am 8. November im
                       Stadtkino im Künstlerhaus live vor Publikum und Jury vorzutragen.
                     </p>
