@@ -128,18 +128,17 @@ export default function ProgrammPage() {
                 </div>
 
                 <div className="mt-10 pt-8" style={{ borderTop: "1px solid rgba(212,168,67,0.2)" }}>
-                  <p className="font-serif text-xl font-black text-gold-400 mb-2">
-                    Wir suchen noch Redner:innen!
+                  <p className="font-serif text-xl font-black text-gold-400 mb-3">
+                    Einreichungen abgeschlossen
                   </p>
-                  <p className="font-body text-creme-200/60 text-sm leading-relaxed">
-                    Einreichschluss: <strong className="text-creme-200">Mittwoch, 30. September 2026</strong>
+                  <p className="font-body text-creme-200/70 text-sm leading-relaxed mb-2">
+                    Wir danken allen Autor:innen für über <strong className="text-creme-200">150 rührende, lustige,
+                    gefühlvolle, kunstvolle, traurige und überraschende Grabreden</strong>.
                   </p>
-                  <a
-                    href="mailto:MeineRede@grabredenwettbewerb.at"
-                    className="inline-flex items-center gap-2 mt-4 font-body font-semibold text-sm text-gold-400 hover:text-gold-300 transition-colors"
-                  >
-                    MeineRede@grabredenwettbewerb.at →
-                  </a>
+                  <p className="font-body text-creme-200/50 text-sm leading-relaxed">
+                    In den kommenden Wochen trifft die Auswahlkommission ihre Entscheidung.
+                    Alle Autor:innen werden anschließend verständigt.
+                  </p>
                 </div>
               </div>
 
@@ -149,8 +148,7 @@ export default function ProgrammPage() {
                   <span className="section-eyebrow mb-3 block">Bleiben Sie informiert</span>
                   <h3 className="font-serif text-2xl font-black text-creme-200 mb-2">Newsletter</h3>
                   <p className="font-body text-creme-200/50 text-sm mb-6 leading-relaxed">
-                    Über unseren Newsletter bleiben Sie informiert und erhalten als Erste
-                    Neuigkeiten zum Kartenverkauf.
+                    Erfahren Sie als Erste vom Einreichbeginn 2027, der Finalistenliste und dem Kartenverkauf.
                   </p>
                   <NewsletterSignup variant="dark" />
                   <p className="font-body text-xs text-creme-200/25 mt-4">
@@ -168,76 +166,19 @@ export default function ProgrammPage() {
             style={{ background: "linear-gradient(to bottom, transparent, #f7f3e8)" }} />
         </section>
 
-        {/* ── Teilnahmebedingungen ── */}
+        {/* ── Newsletter CTA ── */}
         <section className="py-12 lg:py-16" style={{ background: "#352741" }}>
-          <div className="container-section max-w-4xl mx-auto">
-            <div className="text-center mb-12">
-              <span className="section-eyebrow mb-2 block">Regelwerk</span>
-              <h2 className="font-serif text-4xl font-black text-creme-200">
-                Teilnahmebedingungen
-              </h2>
-            </div>
-
-            <ol className="space-y-4">
-              {bedingungen.map((b) => (
-                <li key={b.nr} className="flex gap-5 items-start">
-                  <span
-                    className="flex-shrink-0 font-serif font-black text-sm w-10 h-10 flex items-center justify-center"
-                    style={{ background: "rgba(212,168,67,0.15)", color: "#d4a843", border: "1px solid rgba(212,168,67,0.3)", borderRadius: 0 }}
-                  >
-                    {b.nr}
-                  </span>
-                  <p className="font-body text-creme-200/80 text-base leading-relaxed pt-2">
-                    <B>{b.text}</B>
-                  </p>
-                </li>
-              ))}
-            </ol>
-
-            <div className="mt-12 pt-8 text-center" style={{ borderTop: "1px solid rgba(212,168,67,0.15)" }}>
-              <a
-                href="mailto:MeineRede@grabredenwettbewerb.at"
-                className="inline-flex items-center gap-3 px-8 py-4 bg-gold-500 text-aubergine-900 font-body font-semibold hover:bg-gold-400 transition-colors"
-                style={{ borderRadius: 0 }}
-              >
-                Jetzt einreichen &ndash; MeineRede@grabredenwettbewerb.at
-              </a>
-              <p className="font-body text-xs text-creme-200/30 mt-4">
-                Mit der Einreichung stimmen Sie den Teilnahmebedingungen zu.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* ── So reichen Sie ein ── */}
-        <section className="py-12 lg:py-16" style={{ background: "#f7f3e8" }}>
-          <div className="container-section max-w-4xl mx-auto">
-            <div className="text-center mb-12">
-              <span className="section-eyebrow">Einreichen</span>
-              <h2 className="font-serif text-4xl font-black text-aubergine-500">
-                So reichen Sie ein
-              </h2>
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-              <MethodCard
-                icon={<MailIcon />}
-                title="Online"
-                body={"Per E-Mail an\nMeineRede@grabredenwettbewerb.at"}
-                ctaLabel="E-Mail senden"
-                ctaHref="mailto:MeineRede@grabredenwettbewerb.at"
-              />
-              <MethodCard
-                icon={<LetterIcon />}
-                title="Per Brief"
-                body={"Buchhandlung Analog\nOtto-Bauer-Gasse 6/1\n1060 Wien"}
-              />
-              <MethodCard
-                icon={<PersonIcon />}
-                title="Persönlich"
-                body={"Direkt in der Buchhandlung Analog\nOtto-Bauer-Gasse 6/1, 1060 Wien"}
-                ctaLabel="Website besuchen"
-                ctaHref="https://www.buchhandlunganalog.at"
-              />
+          <div className="container-section max-w-2xl mx-auto text-center">
+            <span className="section-eyebrow mb-4 block">Grabredenwettbewerb 2027</span>
+            <h2 className="font-serif text-3xl font-black text-creme-200 mb-4">
+              Nächste Einreichung folgt
+            </h2>
+            <p className="font-body text-creme-200/60 text-base leading-relaxed mb-8">
+              In unserem Newsletter erfahren Sie als Erste vom Einreichbeginn für den
+              Grabredenwettbewerb 2027.
+            </p>
+            <div className="max-w-sm mx-auto">
+              <NewsletterSignup variant="dark" />
             </div>
           </div>
         </section>

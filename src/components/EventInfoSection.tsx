@@ -34,7 +34,6 @@ export default function EventInfoSection() {
                 </div>
                 <div>
                   <p className="font-serif font-bold text-creme-200 text-lg">Sonntag, 8. November 2026</p>
-                  <p className="font-body text-creme-200/50 text-sm mt-0.5">Einreichschluss: Mittwoch, 30. September 2026</p>
                 </div>
               </div>
 
@@ -58,13 +57,13 @@ export default function EventInfoSection() {
                   style={{ background: "rgba(212,168,67,0.15)", border: "1px solid rgba(212,168,67,0.3)" }}>
                   <svg className="w-5 h-5 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8}
-                      d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                      d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
                   </svg>
                 </div>
                 <div>
-                  <p className="font-serif font-bold text-creme-200 text-lg">Rede einreichen</p>
+                  <p className="font-serif font-bold text-creme-200 text-lg">Einreichungen abgeschlossen</p>
                   <p className="font-body text-creme-200/50 text-sm mt-0.5">
-                    Online, per Post oder persönlich in der Buchhandlung Analog
+                    Die Auswahlkommission trifft in den kommenden Wochen ihre Entscheidung
                   </p>
                 </div>
               </div>
@@ -75,7 +74,7 @@ export default function EventInfoSection() {
                 href="/programm"
                 className="inline-flex items-center gap-2 font-body font-semibold text-sm text-gold-400 hover:text-gold-300 transition-colors group"
               >
-                Alle Teilnahmebedingungen &amp; Programm
+                Programm &amp; Veranstaltungsinfos
                 <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7"/>
                 </svg>
@@ -97,8 +96,7 @@ export default function EventInfoSection() {
                 Newsletter
               </h3>
               <p className="font-body text-creme-200/50 text-sm mb-6 leading-relaxed">
-                Keine Neuigkeiten verpassen &ndash; Einreichstart, Finalistenliste,
-                Kartenvorverkauf und mehr.
+                Finalistenliste, Kartenvorverkauf und Einreichbeginn 2027 &ndash; bleiben Sie dabei.
               </p>
               <NewsletterSignup variant="dark" />
               <p className="font-body text-xs text-creme-200/25 mt-4">

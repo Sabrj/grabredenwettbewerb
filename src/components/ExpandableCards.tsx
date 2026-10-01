@@ -31,10 +31,10 @@ export default function ExpandableCards() {
               </div>
               <div className="flex-1 min-w-0">
                 <p className="font-body text-xs font-semibold uppercase tracking-widest text-gold-400/70 mb-1">
-                  Jetzt mitmachen
+                  Einreichung 2026
                 </p>
                 <h3 className="font-serif text-2xl md:text-3xl font-black text-creme-200 leading-tight">
-                  Gesucht: Grabredner:innen
+                  Einreichungen abgeschlossen
                 </h3>
               </div>
               <motion.div
@@ -66,23 +66,17 @@ export default function ExpandableCards() {
                     style={{ borderTop: "1px solid rgba(212,168,67,0.2)" }}
                   >
                     <p>
-                      Wir suchen literaturbegeisterte und rhetorisch ambitionierte Grabredner:innen.
-                      Die fiktive Person muss nicht im Roman verstorben sein &ndash; aber irgendwann
-                      müssen wir alle das Zeitliche segnen. Das gilt auch für Romanfiguren.
+                      Die Einreichungen für den Grabredenwettbewerb 2026 sind abgeschlossen.
+                      Wir danken allen Autor:innen für über 150 rührende, lustige, gefühlvolle,
+                      kunstvolle, traurige und überraschende Grabreden.
                     </p>
                     <p>
-                      Im Herbst trifft die Buchhandlung Analog eine Auswahl &ndash; die
-                      Verfasser:innen der besten Reden werden eingeladen, am 8. November im
-                      Stadtkino im Künstlerhaus live vor Publikum und Jury vorzutragen.
+                      In den kommenden Wochen wird die Auswahlkommission ihre Entscheidung treffen.
+                      Alle Autor:innen werden anschließend verständigt.
                     </p>
                     <p className="text-creme-200/45 text-sm pt-1">
-                      Alle Teilnahmebedingungen &amp; Einreichschluss unter{" "}
-                      <Link
-                        href="/programm"
-                        className="text-gold-400 underline underline-offset-2 hover:text-gold-300 transition-colors"
-                      >
-                        Infos / Programm →
-                      </Link>
+                      In unserem Newsletter erfahren Sie vom Einreichbeginn für den{" "}
+                      <strong className="text-creme-200/60">Grabredenwettbewerb 2027</strong>.
                     </p>
                   </div>
                 </motion.div>
