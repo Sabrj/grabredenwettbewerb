@@ -48,7 +48,7 @@ export default function EventInfoSection() {
                 </div>
                 <div>
                   <p className="font-serif font-bold text-creme-200 text-lg">Stadtkino im Künstlerhaus</p>
-                  <p className="font-body text-creme-200/50 text-sm mt-0.5">Karlsplatz 5, 1010 Wien</p>
+                  <p className="font-body text-creme-200/50 text-sm mt-0.5">Akademiestraße 13, 1010 Wien</p>
                 </div>
               </div>
 
