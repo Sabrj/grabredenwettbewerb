@@ -166,6 +166,65 @@ export default function ProgrammPage() {
             style={{ background: "linear-gradient(to bottom, transparent, #f7f3e8)" }} />
         </section>
 
+        {/* ── Veranstaltungsbeschreibung ── */}
+        <section className="py-14 lg:py-20" style={{ background: "#f7f3e8" }}>
+          <div className="container-section max-w-3xl mx-auto">
+            <div className="mb-10">
+              <span className="section-eyebrow mb-4 block">Über den Wettbewerb</span>
+              <h2 className="font-serif text-3xl md:text-4xl font-black text-aubergine-500 leading-tight">
+                Der erste Wiener Grabredenwettbewerb
+              </h2>
+            </div>
+
+            <div className="space-y-5 font-body text-aubergine-500/80 text-base leading-relaxed">
+              <p>
+                Der erste Wiener Grabredenwettbewerb feiert eine bisher wenig geachtete,
+                zutiefst wienerische Literaturgattung: <strong className="text-aubergine-500">Die Trauerrede.</strong>
+              </p>
+
+              <div className="py-4 px-6 my-6" style={{ background: "#352741", borderLeft: "3px solid #d4a843" }}>
+                <p className="font-serif font-bold text-creme-200 text-lg mb-1">8. November 2026</p>
+                <p className="font-body text-creme-200/70 text-sm">Beginn: 15h | Ende: ca. 19h</p>
+                <p className="font-body text-gold-400 text-sm mt-2">
+                  Tickets sind ab 15. Oktober hier oder über das Stadtkino erhältlich.
+                  Reservierungen sind nicht möglich.
+                </p>
+              </div>
+
+              <p>
+                Vor Publikum verabschieden Autorinnen und Autoren ihre Lieblingsfiguren aus der Literatur.
+                Ob alt oder jung, ob gut oder böse, ob tatsächlich in der Vorlage verstorben oder bis
+                zur letzten Seite lebendig &ndash; jede Figur hat einen Abschied verdient. Eine Jury aus
+                Expert*innen kürt die beste Rede und auch die Stimme des Publikums findet nach einem
+                Urnengang Gehör.
+              </p>
+
+              <p>
+                Begleitet wird der Grabredenwettbewerb durch die wundervoll melancholischen Wienerlieder
+                von{" "}
+                <a href="https://www.kollegiumkalksburg.at/" target="_blank" rel="noopener noreferrer"
+                  className="text-gold-600 underline underline-offset-2 hover:text-gold-500 transition-colors">
+                  Kollegium Kalksburg
+                </a>{" "}
+                sowie einzelnen Episoden aus der Kurzfilmreihe{" "}
+                <strong className="text-aubergine-500">REST IN POETRY</strong> von Michael Stavarič.
+              </p>
+
+              <p className="text-aubergine-500/50 text-sm italic">
+                Ein detaillierteres Programm finden Sie in Kürze hier.
+              </p>
+
+              <p className="pt-2">
+                Kontakt:{" "}
+                <a href="mailto:info@grabredenwettbewerb.at"
+                  className="text-gold-600 underline underline-offset-2 hover:text-gold-500 transition-colors">
+                  info@grabredenwettbewerb.at
+                </a>
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* ── Newsletter CTA ── */}
         <section className="py-12 lg:py-16" style={{ background: "#352741" }}>
           <div className="container-section max-w-2xl mx-auto text-center">

@@ -34,6 +34,7 @@ export default function EventInfoSection() {
                 </div>
                 <div>
                   <p className="font-serif font-bold text-creme-200 text-lg">Sonntag, 8. November 2026</p>
+                  <p className="font-body text-creme-200/50 text-sm mt-0.5">Beginn: 15h | Ende: ca. 19h</p>
                 </div>
               </div>
 
@@ -49,6 +50,22 @@ export default function EventInfoSection() {
                 <div>
                   <p className="font-serif font-bold text-creme-200 text-lg">Stadtkino im Künstlerhaus</p>
                   <p className="font-body text-creme-200/50 text-sm mt-0.5">Akademiestraße 13, 1010 Wien</p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <div className="flex-shrink-0 w-10 h-10 flex items-center justify-center"
+                  style={{ background: "rgba(212,168,67,0.15)", border: "1px solid rgba(212,168,67,0.3)" }}>
+                  <svg className="w-5 h-5 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8}
+                      d="M15 5v2m0 4v2m0 4v2M5 5a2 2 0 00-2 2v3a2 2 0 110 4v3a2 2 0 002 2h14a2 2 0 002-2v-3a2 2 0 110-4V7a2 2 0 00-2-2H5z"/>
+                  </svg>
+                </div>
+                <div>
+                  <p className="font-serif font-bold text-creme-200 text-lg">Tickets</p>
+                  <p className="font-body text-creme-200/50 text-sm mt-0.5">
+                    Ab 15. Oktober hier oder über das Stadtkino erhältlich
+                  </p>
                 </div>
               </div>
 
@@ -74,7 +91,7 @@ export default function EventInfoSection() {
                 href="/programm"
                 className="inline-flex items-center gap-2 font-body font-semibold text-sm text-gold-400 hover:text-gold-300 transition-colors group"
               >
-                Programm &amp; Veranstaltungsinfos
+                Mehr Infos
                 <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7"/>
                 </svg>
