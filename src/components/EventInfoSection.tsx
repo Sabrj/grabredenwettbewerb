@@ -63,9 +63,18 @@ export default function EventInfoSection() {
                 </div>
                 <div>
                   <p className="font-serif font-bold text-creme-200 text-lg">Tickets</p>
-                  <p className="font-body text-creme-200/50 text-sm mt-0.5">
+                  <p className="font-body text-creme-200/50 text-sm mt-0.5 mb-3">
                     Ab 15. Oktober hier oder über das Stadtkino erhältlich
                   </p>
+                  <a
+                    href="https://tickets.stadtkinowien.at/seatselection/?show_id=2160&location_id=2"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-5 py-2.5 font-body font-bold text-aubergine-900 hover:opacity-90 transition-opacity text-sm"
+                    style={{ background: "#d4a843", borderRadius: 0 }}
+                  >
+                    Tickets kaufen
+                  </a>
                 </div>
               </div>
 

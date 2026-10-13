@@ -166,6 +166,23 @@ export default function ProgrammPage() {
             style={{ background: "linear-gradient(to bottom, transparent, #f7f3e8)" }} />
         </section>
 
+        {/* ── Newsletter CTA ── */}
+        <section className="py-12 lg:py-16" style={{ background: "#352741" }}>
+          <div className="container-section max-w-2xl mx-auto text-center">
+            <span className="section-eyebrow mb-4 block">Grabredenwettbewerb 2027</span>
+            <h2 className="font-serif text-3xl font-black text-creme-200 mb-4">
+              Nächste Einreichung folgt
+            </h2>
+            <p className="font-body text-creme-200/60 text-base leading-relaxed mb-8">
+              In unserem Newsletter erfahren Sie als Erste vom Einreichbeginn für den
+              Grabredenwettbewerb 2027.
+            </p>
+            <div className="max-w-sm mx-auto">
+              <NewsletterSignup variant="dark" />
+            </div>
+          </div>
+        </section>
+
         {/* ── Veranstaltungsbeschreibung ── */}
         <section className="py-14 lg:py-20" style={{ background: "#f7f3e8" }}>
           <div className="container-section max-w-3xl mx-auto">
@@ -185,10 +202,23 @@ export default function ProgrammPage() {
               <div className="py-4 px-6 my-6" style={{ background: "#352741", borderLeft: "3px solid #d4a843" }}>
                 <p className="font-serif font-bold text-creme-200 text-lg mb-1">8. November 2026</p>
                 <p className="font-body text-creme-200/70 text-sm">Beginn: 15h | Ende: ca. 19h</p>
-                <p className="font-body text-gold-400 text-sm mt-2">
+                <p className="font-body text-creme-200/70 text-sm mt-2 mb-4">
                   Tickets sind ab 15. Oktober hier oder über das Stadtkino erhältlich.
                   Reservierungen sind nicht möglich.
                 </p>
+                <a
+                  href="https://tickets.stadtkinowien.at/seatselection/?show_id=2160&location_id=2"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-6 py-3 font-body font-bold text-aubergine-900 hover:opacity-90 transition-opacity text-sm"
+                  style={{ background: "#d4a843", borderRadius: 0 }}
+                >
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
+                      d="M15 5v2m0 4v2m0 4v2M5 5a2 2 0 00-2 2v3a2 2 0 110 4v3a2 2 0 002 2h14a2 2 0 002-2v-3a2 2 0 110-4V7a2 2 0 00-2-2H5z"/>
+                  </svg>
+                  Tickets kaufen
+                </a>
               </div>
 
               <p>
@@ -221,23 +251,6 @@ export default function ProgrammPage() {
                   info@grabredenwettbewerb.at
                 </a>
               </p>
-            </div>
-          </div>
-        </section>
-
-        {/* ── Newsletter CTA ── */}
-        <section className="py-12 lg:py-16" style={{ background: "#352741" }}>
-          <div className="container-section max-w-2xl mx-auto text-center">
-            <span className="section-eyebrow mb-4 block">Grabredenwettbewerb 2027</span>
-            <h2 className="font-serif text-3xl font-black text-creme-200 mb-4">
-              Nächste Einreichung folgt
-            </h2>
-            <p className="font-body text-creme-200/60 text-base leading-relaxed mb-8">
-              In unserem Newsletter erfahren Sie als Erste vom Einreichbeginn für den
-              Grabredenwettbewerb 2027.
-            </p>
-            <div className="max-w-sm mx-auto">
-              <NewsletterSignup variant="dark" />
             </div>
           </div>
         </section>
