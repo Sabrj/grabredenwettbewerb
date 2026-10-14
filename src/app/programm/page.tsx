@@ -97,94 +97,8 @@ export default function ProgrammPage() {
       <Header />
       <main style={{ background: "#f7f3e8", minHeight: "100vh" }}>
 
-        {/* ── Hero: Event-Info + Newsletter + Suche ── */}
-        <section
-          className="pt-32 pb-20 relative overflow-hidden"
-          style={{ background: "linear-gradient(160deg, #14111c 0%, #201727 55%, #352741 100%)" }}
-        >
-          <div className="container-section relative z-10 max-w-4xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
-
-              {/* Left: Event-Daten */}
-              <div>
-                <span className="section-eyebrow">1. Wiener Grabredenwettbewerb</span>
-                <h1 className="font-serif text-4xl md:text-5xl font-black text-creme-200 leading-tight mt-3 mb-8">
-                  Programm &amp;<br/>Informationen
-                </h1>
-                <div className="space-y-4 font-body text-creme-200/70 text-base leading-relaxed">
-                  <p className="flex items-start gap-3">
-                    <svg className="w-5 h-5 text-gold-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
-                    </svg>
-                    <span><strong className="text-creme-200">Sonntag, 8. November 2026</strong></span>
-                  </p>
-                  <p className="flex items-start gap-3">
-                    <svg className="w-5 h-5 text-gold-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
-                    </svg>
-                    <span><strong className="text-creme-200">Stadtkino im Künstlerhaus</strong><br/>Akademiestraße 13, 1010 Wien</span>
-                  </p>
-                </div>
-
-                <div className="mt-10 pt-8" style={{ borderTop: "1px solid rgba(212,168,67,0.2)" }}>
-                  <p className="font-serif text-xl font-black text-gold-400 mb-3">
-                    Einreichungen abgeschlossen
-                  </p>
-                  <p className="font-body text-creme-200/70 text-sm leading-relaxed mb-2">
-                    Wir danken allen Autor:innen für über <strong className="text-creme-200">150 rührende, lustige,
-                    gefühlvolle, kunstvolle, traurige und überraschende Grabreden</strong>.
-                  </p>
-                  <p className="font-body text-creme-200/50 text-sm leading-relaxed">
-                    In den kommenden Wochen trifft die Auswahlkommission ihre Entscheidung.
-                    Alle Autor:innen werden anschließend verständigt.
-                  </p>
-                </div>
-              </div>
-
-              {/* Right: Newsletter */}
-              <div className="flex flex-col justify-start">
-                <div className="p-8" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(212,168,67,0.15)" }}>
-                  <span className="section-eyebrow mb-3 block">Bleiben Sie informiert</span>
-                  <h3 className="font-serif text-2xl font-black text-creme-200 mb-2">Newsletter</h3>
-                  <p className="font-body text-creme-200/50 text-sm mb-6 leading-relaxed">
-                    Erfahren Sie als Erste vom Einreichbeginn 2027, der Finalistenliste und dem Kartenverkauf.
-                  </p>
-                  <NewsletterSignup variant="dark" />
-                  <p className="font-body text-xs text-creme-200/25 mt-4">
-                    Kein Spam. Abmeldung jederzeit möglich.{" "}
-                    <Link href="/datenschutz" className="underline underline-offset-2 hover:text-creme-200/50 transition-colors">
-                      Datenschutz
-                    </Link>
-                  </p>
-                </div>
-              </div>
-
-            </div>
-          </div>
-          <div className="absolute bottom-0 left-0 right-0 h-16 pointer-events-none"
-            style={{ background: "linear-gradient(to bottom, transparent, #f7f3e8)" }} />
-        </section>
-
-        {/* ── Newsletter CTA ── */}
-        <section className="py-12 lg:py-16" style={{ background: "#352741" }}>
-          <div className="container-section max-w-2xl mx-auto text-center">
-            <span className="section-eyebrow mb-4 block">Grabredenwettbewerb 2027</span>
-            <h2 className="font-serif text-3xl font-black text-creme-200 mb-4">
-              Nächste Einreichung folgt
-            </h2>
-            <p className="font-body text-creme-200/60 text-base leading-relaxed mb-8">
-              In unserem Newsletter erfahren Sie als Erste vom Einreichbeginn für den
-              Grabredenwettbewerb 2027.
-            </p>
-            <div className="max-w-sm mx-auto">
-              <NewsletterSignup variant="dark" />
-            </div>
-          </div>
-        </section>
-
         {/* ── Veranstaltungsbeschreibung ── */}
-        <section className="py-14 lg:py-20" style={{ background: "#f7f3e8" }}>
+        <section className="pt-32 pb-14 lg:pt-36 lg:pb-20" style={{ background: "#f7f3e8" }}>
           <div className="container-section max-w-3xl mx-auto">
             <div className="mb-10">
               <span className="section-eyebrow mb-4 block">Über den Wettbewerb</span>
@@ -255,6 +169,61 @@ export default function ProgrammPage() {
           </div>
         </section>
 
+        {/* ── Hero: Event-Info + Newsletter + Suche ── */}
+        <section
+          className="pt-16 pb-20 relative overflow-hidden"
+          style={{ background: "linear-gradient(160deg, #14111c 0%, #201727 55%, #352741 100%)" }}
+        >
+          <div className="container-section relative z-10 max-w-4xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+
+              {/* Left: Event-Daten */}
+              <div>
+                <span className="section-eyebrow">1. Wiener Grabredenwettbewerb</span>
+                <h1 className="font-serif text-4xl md:text-5xl font-black text-creme-200 leading-tight mt-3 mb-8">
+                  Programm &amp;<br/>Informationen
+                </h1>
+                <div className="space-y-4 font-body text-creme-200/70 text-base leading-relaxed">
+                  <p className="flex items-start gap-3">
+                    <svg className="w-5 h-5 text-gold-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                    </svg>
+                    <span><strong className="text-creme-200">Sonntag, 8. November 2026</strong></span>
+                  </p>
+                  <p className="flex items-start gap-3">
+                    <svg className="w-5 h-5 text-gold-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                    </svg>
+                    <span><strong className="text-creme-200">Stadtkino im Künstlerhaus</strong><br/>Akademiestraße 13, 1010 Wien</span>
+                  </p>
+                </div>
+
+              </div>
+
+              {/* Right: Newsletter */}
+              <div className="flex flex-col justify-start">
+                <div className="p-5" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(212,168,67,0.15)" }}>
+                  <span className="section-eyebrow mb-2 block text-xs">Newsletter</span>
+                  <p className="font-body text-creme-200/50 text-xs mb-4 leading-relaxed">
+                    Erfahren Sie als Erste vom Einreichbeginn 2027 und dem Kartenverkauf.
+                  </p>
+                  <NewsletterSignup variant="dark" />
+                  <p className="font-body text-xs text-creme-200/25 mt-3">
+                    Kein Spam.{" "}
+                    <Link href="/datenschutz" className="underline underline-offset-2 hover:text-creme-200/50 transition-colors">
+                      Datenschutz
+                    </Link>
+                  </p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <div className="absolute bottom-0 left-0 right-0 h-16 pointer-events-none"
+            style={{ background: "linear-gradient(to bottom, transparent, #f7f3e8)" }} />
+        </section>
+
         {/* ── Trophäe ── */}
         <section className="py-4 pb-12" style={{ background: "#f7f3e8" }}>
           <div className="container-section max-w-4xl mx-auto">
@@ -271,6 +240,23 @@ export default function ProgrammPage() {
               width={1200} height={500}
               className="w-full max-w-4xl h-auto"
             />
+          </div>
+        </section>
+
+        {/* ── Newsletter CTA ── */}
+        <section className="py-12 lg:py-16" style={{ background: "#352741" }}>
+          <div className="container-section max-w-2xl mx-auto text-center">
+            <span className="section-eyebrow mb-4 block">Grabredenwettbewerb 2027</span>
+            <h2 className="font-serif text-3xl font-black text-creme-200 mb-4">
+              Nächste Einreichung folgt
+            </h2>
+            <p className="font-body text-creme-200/60 text-base leading-relaxed mb-8">
+              In unserem Newsletter erfahren Sie als Erste vom Einreichbeginn für den
+              Grabredenwettbewerb 2027.
+            </p>
+            <div className="max-w-sm mx-auto">
+              <NewsletterSignup variant="dark" />
+            </div>
           </div>
         </section>
 

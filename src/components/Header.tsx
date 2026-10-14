@@ -6,7 +6,6 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { useAuth } from "@/context/AuthContext";
-import CountdownTimer from "@/components/CountdownTimer";
 
 const NAV_LINKS = [
   { href: "/",         label: "Startseite" },
@@ -54,14 +53,6 @@ export default function Header() {
           isScrolled ? "shadow-md border-b border-gray-100" : "border-b border-transparent"
         }`}
       >
-        {/* Countdown bar */}
-        <div
-          className="w-full flex items-center justify-center py-1.5 px-4"
-          style={{ background: "#201727", borderBottom: "1px solid rgba(212,168,67,0.12)" }}
-        >
-          <CountdownTimer variant="bar" />
-        </div>
-
         <div className="container-section">
           <div className="relative flex items-center justify-between h-14 lg:h-18">
 

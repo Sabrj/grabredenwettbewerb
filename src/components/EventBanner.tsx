@@ -59,7 +59,7 @@ export default function EventBanner() {
               Tickets kaufen
             </a>
             <p className="font-body text-creme-200/30 text-xs mt-3">
-              Auch über das Stadtkino erhältlich
+              Auch vor Ort im Stadtkino erhältlich
             </p>
           </div>
         </motion.div>
