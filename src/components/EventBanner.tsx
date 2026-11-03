@@ -43,7 +43,7 @@ export default function EventBanner() {
           {/* Right: Ticket CTA */}
           <div className="flex-shrink-0 text-center">
             <p className="font-body text-creme-200/50 text-sm mb-4">
-              Tickets sind ab 15. Oktober erhältlich
+              Tickets gibt es hier online oder im Stadtkino im Künstlerhaus.
             </p>
             <a
               href="https://tickets.stadtkinowien.at/seatselection/?show_id=2160&location_id=2"

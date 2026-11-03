@@ -117,8 +117,7 @@ export default function ProgrammPage() {
                 <p className="font-serif font-bold text-creme-200 text-lg mb-1">8. November 2026</p>
                 <p className="font-body text-creme-200/70 text-sm">Beginn: 15h | Ende: ca. 19h</p>
                 <p className="font-body text-creme-200/70 text-sm mt-2 mb-4">
-                  Tickets sind ab 15. Oktober hier oder über das Stadtkino erhältlich.
-                  Reservierungen sind nicht möglich.
+                  Tickets gibt es hier online oder im Stadtkino im Künstlerhaus.
                 </p>
                 <a
                   href="https://tickets.stadtkinowien.at/seatselection/?show_id=2160&location_id=2"
@@ -151,11 +150,7 @@ export default function ProgrammPage() {
                   Kollegium Kalksburg
                 </a>{" "}
                 sowie einzelnen Episoden aus der Kurzfilmreihe{" "}
-                <strong className="text-aubergine-500">REST IN POETRY</strong> von Michael Stavarič.
-              </p>
-
-              <p className="text-aubergine-500/50 text-sm italic">
-                Ein detaillierteres Programm finden Sie in Kürze hier.
+                <strong className="text-aubergine-500">REST IN POETRY</strong> von Michael Stavarič und Tina-Maria Feyrer.
               </p>
 
               <p className="pt-2">

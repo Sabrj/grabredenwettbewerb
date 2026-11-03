@@ -70,10 +70,6 @@ export default function ExpandableCards() {
                       Wir danken allen Autor:innen für über 150 rührende, lustige, gefühlvolle,
                       kunstvolle, traurige und überraschende Grabreden.
                     </p>
-                    <p>
-                      In den kommenden Wochen wird die Auswahlkommission ihre Entscheidung treffen.
-                      Alle Autor:innen werden anschließend verständigt.
-                    </p>
                     <p className="text-creme-200/45 text-sm pt-1">
                       In unserem Newsletter erfahren Sie vom Einreichbeginn für den{" "}
                       <strong className="text-creme-200/60">Grabredenwettbewerb 2027</strong>.

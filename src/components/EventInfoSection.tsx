@@ -64,7 +64,7 @@ export default function EventInfoSection() {
                 <div>
                   <p className="font-serif font-bold text-creme-200 text-lg">Tickets</p>
                   <p className="font-body text-creme-200/50 text-sm mt-0.5 mb-3">
-                    Ab 15. Oktober hier oder über das Stadtkino erhältlich
+                    Tickets gibt es hier online oder im Stadtkino im Künstlerhaus.
                   </p>
                   <a
                     href="https://tickets.stadtkinowien.at/seatselection/?show_id=2160&location_id=2"
