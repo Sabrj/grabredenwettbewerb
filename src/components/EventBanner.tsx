@@ -17,50 +17,44 @@ export default function EventBanner() {
           transition={{ duration: 0.6 }}
           className="flex flex-col lg:flex-row items-center lg:items-start gap-8 lg:gap-16"
         >
-          {/* Left: Event info */}
+          {/* Left: Rückblick */}
           <div className="flex-1 text-center lg:text-left">
-            <span className="section-eyebrow mb-4 block">1. Wiener Grabredenwettbewerb</span>
+            <span className="section-eyebrow mb-4 block">8. November 2026 · Stadtkino im Künstlerhaus</span>
             <h2 className="font-serif text-3xl md:text-4xl font-black text-creme-200 leading-tight mb-4">
-              8. November 2026
+              Das war der 1. Wiener Grabredenwettbewerb
             </h2>
-            <div className="space-y-2 font-body text-creme-200/60 text-base mb-6">
-              <p>Beginn: 15h</p>
-              <p>Stadtkino im Künstlerhaus<br/>
-                <span className="text-sm">Akademiestraße 13, 1010 Wien</span>
-              </p>
-            </div>
+            <p className="font-body text-creme-200/60 text-base mb-6 leading-relaxed">
+              11 literarische Figuren wurden betrauert, verabschiedet oder zum Teufel geschickt.
+              Ein unvergesslicher Nachmittag voller Grabreden, Wienerlieder und Applaus.
+            </p>
             <Link
-              href="/programm"
-              className="inline-flex items-center gap-2 font-body text-sm text-gold-400 hover:text-gold-300 transition-colors group"
+              href="/rueckblick/2026"
+              className="inline-flex items-center gap-2 font-body font-semibold text-sm text-gold-400 hover:text-gold-300 transition-colors group"
             >
-              Mehr Infos
+              Zum Rückblick 2026
               <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7"/>
               </svg>
             </Link>
           </div>
 
-          {/* Right: Ticket CTA */}
-          <div className="flex-shrink-0 text-center">
-            <p className="font-body text-creme-200/50 text-sm mb-4">
-              Tickets gibt es hier online oder im Stadtkino im Künstlerhaus.
-            </p>
-            <a
-              href="https://tickets.stadtkinowien.at/seatselection/?show_id=2160&location_id=2"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 px-8 py-4 font-body font-bold text-aubergine-900 hover:opacity-90 transition-opacity text-base"
-              style={{ background: "#d4a843", borderRadius: 0 }}
-            >
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
-                  d="M15 5v2m0 4v2m0 4v2M5 5a2 2 0 00-2 2v3a2 2 0 110 4v3a2 2 0 002 2h14a2 2 0 002-2v-3a2 2 0 110-4V7a2 2 0 00-2-2H5z"/>
-              </svg>
-              Tickets kaufen
-            </a>
-            <p className="font-body text-creme-200/30 text-xs mt-3">
-              Auch vor Ort im Stadtkino erhältlich
-            </p>
+          {/* Right: 2027 teaser */}
+          <div className="flex-shrink-0 text-center lg:text-left max-w-xs">
+            <div className="p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(212,168,67,0.2)" }}>
+              <span className="section-eyebrow mb-2 block text-xs">Grabredenwettbewerb 2027</span>
+              <p className="font-body text-creme-200/60 text-sm leading-relaxed mb-4">
+                Nächste Einreichung folgt. Jetzt im Newsletter anmelden und als Erste informiert sein.
+              </p>
+              <Link
+                href="/ueber"
+                className="inline-flex items-center gap-2 font-body font-semibold text-sm text-creme-200/70 hover:text-creme-200 transition-colors group"
+              >
+                Mehr erfahren
+                <svg className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7"/>
+                </svg>
+              </Link>
+            </div>
           </div>
         </motion.div>
       </div>

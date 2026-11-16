@@ -8,9 +8,10 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useAuth } from "@/context/AuthContext";
 
 const NAV_LINKS = [
-  { href: "/",         label: "Startseite" },
-  { href: "/programm", label: "Infos / Programm" },
-  { href: "/kontakt",  label: "Kontakt" },
+  { href: "/",                label: "Startseite" },
+  { href: "/ueber",           label: "Über den Wettbewerb" },
+  { href: "/rueckblick/2026", label: "Rückblick 2026" },
+  { href: "/kontakt",         label: "Kontakt" },
 ];
 
 export default function Header() {
