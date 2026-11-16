@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import Image from "next/image";
 import Link from "next/link";
 import TrophaeCard from "@/components/TrophaeCard";
+import PhotoGallery from "@/components/PhotoGallery";
 import NewsletterSignup from "@/components/NewsletterSignup";
 import type { Metadata } from "next";
 
@@ -219,6 +220,66 @@ export default function ProgrammPage() {
             style={{ background: "linear-gradient(to bottom, transparent, #f7f3e8)" }} />
         </section>
 
+
+        {/* ── Galerie ── */}
+        <PhotoGallery
+          variant="dark"
+          title="Die Rednerinnen und Redner 2026"
+          subtitle="In 10 großartigen Reden wurden 11 literarische Figuren betrauert, verabschiedet oder zum Teufel geschickt. 1. Wiener Grabredenwettbewerb, 8. November 2026"
+          credit="Alle Fotos: © Teresa Wagenhofer"
+          images={[
+            { src: "/gallery/redner-01-gruppe.jpg" },
+            { src: "/gallery/redner-02-iris-hefner.jpg", caption: "Iris Hefner verabschiedet Pippi Langstrumpf." },
+            { src: "/gallery/redner-03-martina-richards.jpg", caption: "Martina Richards trauert um Miss Marple." },
+            { src: "/gallery/redner-04-stefan-kutzenberger.jpg", caption: "Stefan Kutzenberger lässt das Leben von Don Quijote Revue passieren." },
+            { src: "/gallery/redner-05-thomas-posch.jpg", caption: "Thomas Posch trauert um Fritz Fantom." },
+            { src: "/gallery/redner-06-david-hassbach.jpg", caption: "David Hassbach verabschiedet Tom Turbo." },
+            { src: "/gallery/redner-07-mara-schwarzfels.jpg", caption: "Mara Schwarzfels betrauert Frankensteins Monster." },
+            { src: "/gallery/redner-08-paul-ferstl.jpg", caption: "Paul Ferstl reminisziert über das Leben der kleinen Raupe Nimmersatt." },
+            { src: "/gallery/redner-09-katrin-martinkovich.jpg", caption: "Katrin Martinkovich beklagt den Verlust von Moby Dick." },
+            { src: "/gallery/redner-10-manuela-reiter.jpg", caption: "Manuela Reiter begräbt Jedermann – in der Rolle der Buhlschaft." },
+            { src: "/gallery/redner-11-christoph-becker.jpg", caption: "Christoph Becker hält einen Nachruf auf Max & Moritz – im Doppelpack." },
+          ]}
+        />
+
+        <PhotoGallery
+          variant="light"
+          title="Die Gewinnerinnen und Gewinner"
+          subtitle="Jury und Publikum wählten die besten Grabreden des Tages."
+          credit="Alle Fotos: © Teresa Wagenhofer"
+          images={[
+            { src: "/gallery/gewinner-01-gruppe.jpg", caption: "Wir präsentieren: Die Gewinnerinnen und Gewinner des 1. Wiener Grabredenwettbewerbs!" },
+            { src: "/gallery/gewinner-02-paul-ferstl-hauptpreis.jpg", caption: "Den Hauptpreis verlieh die Jury an Paul Ferstl für seinen einfühlsamen und humorvollen Nachruf auf die kleine Raupe Nimmersatt. Die Trophäe wurde gestaltet von ember-glass und gestiftet von Bestattung Himmelblau." },
+            { src: "/gallery/gewinner-03-publikumspreis-a.jpg", caption: "Das Publikum bestimmte per Urnengang gleich 3 Lieblinge: Manuela Reiter, Paul Ferstl und David Hassbach – jeweils prämiert mit einem Gutschein von Gut Behütet." },
+            { src: "/gallery/gewinner-04-publikumspreis-b.jpg", caption: "Manuela Reiter, Paul Ferstl und David Hassbach – die drei Publikumslieblinge." },
+            { src: "/gallery/gewinner-05-finale.jpg", caption: "Wir gratulieren allen Gewinner:innen und bedanken uns bei allen Teilnehmenden. Es war ein wundervoller Nachmittag!" },
+          ]}
+        />
+
+        <PhotoGallery
+          variant="dark"
+          title="Das war der 1. Wiener Grabredenwettbewerb"
+          subtitle="1000 Dank an alle Redner:innen, unsere fantastische Moderatorin Birgit Denk, an Kollegium Kalksburg für die traurigen Gesänge, an Tina-Maria Feyrer und Michael Stavarič für den Ausschnitt aus REST IN POETRY sowie unsere Jury: Rotraut Schöberl, Carl Achleitner, Dr. Paula Wojcik und Michael Stavarič. Wir sind überwältigt von dem großen Zuspruch und freuen uns auf kommendes Jahr."
+          credit="Alle Fotos: © Teresa Wagenhofer"
+          images={[
+            { src: "/gallery/event-01.jpg" },
+            { src: "/gallery/event-02.jpg" },
+            { src: "/gallery/event-03.jpg" },
+            { src: "/gallery/event-04.jpg" },
+            { src: "/gallery/event-05.jpg" },
+            { src: "/gallery/event-06.jpg" },
+            { src: "/gallery/event-07.jpg" },
+            { src: "/gallery/event-08.jpg" },
+            { src: "/gallery/event-09.jpg" },
+            { src: "/gallery/event-10.jpg" },
+            { src: "/gallery/event-11.jpg" },
+            { src: "/gallery/event-12.jpg" },
+            { src: "/gallery/event-13.jpg" },
+            { src: "/gallery/event-14.jpg" },
+            { src: "/gallery/event-15.jpg" },
+            { src: "/gallery/event-16.jpg" },
+          ]}
+        />
         {/* ── Trophäe ── */}
         <section className="py-4 pb-12" style={{ background: "#f7f3e8" }}>
           <div className="container-section max-w-4xl mx-auto">
