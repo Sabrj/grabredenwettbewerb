@@ -50,7 +50,6 @@ export default function UeberPage() {
           <div className="container-section relative z-10 max-w-4xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
               <div>
-                <span className="section-eyebrow">1. Wiener Grabredenwettbewerb</span>
                 <h1 className="font-serif text-4xl md:text-5xl font-black text-creme-200 leading-tight mt-3 mb-6">
                   Über den<br/>Wettbewerb
                 </h1>
@@ -87,8 +86,7 @@ export default function UeberPage() {
               </div>
             </div>
           </div>
-          <div className="absolute bottom-0 left-0 right-0 h-16 pointer-events-none"
-            style={{ background: "linear-gradient(to bottom, transparent, #f7f3e8)" }} />
+
         </section>
 
         {/* ── Beschreibung ── */}
@@ -112,17 +110,7 @@ export default function UeberPage() {
                 Expert*innen kürt die beste Rede und auch die Stimme des Publikums findet nach einem
                 Urnengang Gehör.
               </p>
-              <p>
-                Begleitet wird der Grabredenwettbewerb durch die wundervoll melancholischen Wienerlieder
-                von{" "}
-                <a href="https://www.kollegiumkalksburg.at/" target="_blank" rel="noopener noreferrer"
-                  className="text-gold-600 underline underline-offset-2 hover:text-gold-500 transition-colors">
-                  Kollegium Kalksburg
-                </a>{" "}
-                sowie einzelnen Episoden aus der Kurzfilmreihe{" "}
-                <strong className="text-aubergine-500">REST IN POETRY</strong> von Michael Stavarič und Tina-Maria Feyrer.
-              </p>
-              <p className="pt-2">
+<p className="pt-2">
                 Kontakt:{" "}
                 <a href="mailto:info@grabredenwettbewerb.at"
                   className="text-gold-600 underline underline-offset-2 hover:text-gold-500 transition-colors">

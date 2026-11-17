@@ -18,7 +18,7 @@ export default function Footer() {
         style={{ background: "linear-gradient(90deg, transparent, #d4a843, #352741, #d4a843, transparent)" }}/>
 
       <div className="container-section py-14">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
 
           {/* Brand */}
           <div className="sm:col-span-2 lg:col-span-1">
@@ -40,10 +40,10 @@ export default function Footer() {
             <h3 className="font-serif text-creme-200 font-semibold text-sm mb-5">Navigation</h3>
             <ul className="space-y-3">
               {[
-                ["/",           "Startseite"],
-                ["/programm",   "Infos / Programm"],
-                ["/kontakt",    "Kontakt"],
-                ["/login",      "Login"],
+                ["/",                "Startseite"],
+                ["/ueber",           "Über den Wettbewerb"],
+                ["/rueckblick/2026", "Rückblick 2026"],
+                ["/kontakt",         "Kontakt"],
               ].map(([href, label]) => (
                 <li key={href}>
                   <Link href={href} className="font-body text-sm hover:text-creme-200 transition-colors duration-200">
@@ -54,25 +54,6 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Event */}
-          <div>
-            <h3 className="font-serif text-creme-200 font-semibold text-sm mb-5">Event</h3>
-            <ul className="space-y-3 font-body text-sm">
-              <li className="flex items-start gap-2">
-                <svg className="w-4 h-4 text-gold-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
-                </svg>
-                <time dateTime="2026-11-08">Sonntag, 8.11.2026</time>
-              </li>
-              <li className="flex items-start gap-2">
-                <svg className="w-4 h-4 text-gold-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
-                </svg>
-                <address className="not-italic">Stadtkino im Künstlerhaus<br/>Wien, Österreich</address>
-              </li>
-            </ul>
-          </div>
 
           {/* Contact + Newsletter */}
           <div>

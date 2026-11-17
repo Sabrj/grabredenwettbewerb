@@ -19,7 +19,6 @@ export default function EventBanner() {
         >
           {/* Left: Rückblick */}
           <div className="flex-1 text-center lg:text-left">
-            <span className="section-eyebrow mb-4 block">8. November 2026 · Stadtkino im Künstlerhaus</span>
             <h2 className="font-serif text-3xl md:text-4xl font-black text-creme-200 leading-tight mb-4">
               Das war der 1. Wiener Grabredenwettbewerb
             </h2>

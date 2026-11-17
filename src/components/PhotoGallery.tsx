@@ -10,10 +10,11 @@ interface GalleryImage {
 
 interface PhotoGalleryProps {
   images: GalleryImage[];
-  title: string;
+  title?: string;
   subtitle?: string;
   credit?: string;
   variant?: "light" | "dark";
+  inline?: boolean;
 }
 
 export default function PhotoGallery({
@@ -22,15 +23,21 @@ export default function PhotoGallery({
   subtitle,
   credit,
   variant = "light",
+  inline = false,
 }: PhotoGalleryProps) {
+  const PER_PAGE = 3;
+  const totalPages = Math.ceil(images.length / PER_PAGE);
+  const [page, setPage] = useState(0);
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
-  const close = useCallback(() => setLightboxIndex(null), []);
-  const prev = useCallback(() =>
+  const visibleImages = images.slice(page * PER_PAGE, page * PER_PAGE + PER_PAGE);
+
+  const closeLightbox = useCallback(() => setLightboxIndex(null), []);
+  const prevLightbox = useCallback(() =>
     setLightboxIndex((i) => (i !== null ? (i - 1 + images.length) % images.length : null)),
     [images.length]
   );
-  const next = useCallback(() =>
+  const nextLightbox = useCallback(() =>
     setLightboxIndex((i) => (i !== null ? (i + 1) % images.length : null)),
     [images.length]
   );
@@ -38,137 +45,115 @@ export default function PhotoGallery({
   useEffect(() => {
     if (lightboxIndex === null) return;
     const handler = (e: KeyboardEvent) => {
-      if (e.key === "Escape") close();
-      if (e.key === "ArrowLeft") prev();
-      if (e.key === "ArrowRight") next();
+      if (e.key === "Escape") closeLightbox();
+      if (e.key === "ArrowLeft") prevLightbox();
+      if (e.key === "ArrowRight") nextLightbox();
     };
     window.addEventListener("keydown", handler);
     document.body.style.overflow = "hidden";
-    return () => {
-      window.removeEventListener("keydown", handler);
-      document.body.style.overflow = "";
-    };
-  }, [lightboxIndex, close, prev, next]);
+    return () => { window.removeEventListener("keydown", handler); document.body.style.overflow = ""; };
+  }, [lightboxIndex, closeLightbox, prevLightbox, nextLightbox]);
 
   const isDark = variant === "dark";
-  const bg = isDark ? "#14111c" : "#f7f3e8";
+  const bg    = isDark ? "#14111c" : "#f7f3e8";
   const textMain = isDark ? "#f5f0e8" : "#2d1f3d";
-  const textSub = isDark ? "rgba(245,240,232,0.55)" : "rgba(45,31,61,0.55)";
+  const textSub  = isDark ? "rgba(245,240,232,0.55)" : "rgba(45,31,61,0.55)";
 
-  return (
-    <section className="py-14 lg:py-20" style={{ background: bg }}>
-      <div className="container-section">
-        {/* Header */}
-        <div className="mb-8 max-w-3xl">
-          <h2 className="font-serif text-2xl md:text-3xl font-black leading-tight mb-2"
-            style={{ color: textMain }}>
-            {title}
-          </h2>
-          {subtitle && (
-            <p className="font-body text-base leading-relaxed" style={{ color: textSub }}>
-              {subtitle}
-            </p>
-          )}
-          {credit && (
-            <p className="font-body text-xs mt-2" style={{ color: textSub, opacity: 0.7 }}>
-              {credit}
-            </p>
-          )}
+  const inner = (
+    <div className={inline ? "" : "container-section"}>
+      {(title || subtitle || credit) && (
+        <div className="mb-6 max-w-3xl">
+          {title && <h2 className="font-serif text-2xl md:text-3xl font-black leading-tight mb-2" style={{ color: textMain }}>{title}</h2>}
+          {subtitle && <p className="font-body text-sm leading-relaxed" style={{ color: textSub }}>{subtitle}</p>}
+          {credit && <p className="font-body text-xs mt-2" style={{ color: textSub, opacity: 0.6 }}>{credit}</p>}
         </div>
+      )}
 
-        {/* Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-1 md:gap-1.5">
-          {images.map((img, idx) => (
+      {/* Carousel grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1.5">
+        {visibleImages.map((img, idx) => {
+          const globalIdx = page * PER_PAGE + idx;
+          return (
             <button
               key={img.src}
-              onClick={() => setLightboxIndex(idx)}
-              className="relative aspect-square overflow-hidden group focus:outline-none focus:ring-2 focus:ring-gold-400"
-              aria-label={img.caption || `Bild ${idx + 1}`}
+              onClick={() => setLightboxIndex(globalIdx)}
+              className="relative overflow-hidden group focus:outline-none focus:ring-2 focus:ring-gold-400"
+              style={{ aspectRatio: "4/3" }}
+              aria-label={img.caption || `Bild ${globalIdx + 1}`}
             >
               <Image
                 src={img.src}
-                alt={img.caption || `Foto ${idx + 1}`}
+                alt={img.caption || `Foto ${globalIdx + 1}`}
                 fill
                 className="object-cover transition-transform duration-500 group-hover:scale-105"
-                sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
               />
               {img.caption && (
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors duration-300 flex items-end">
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/45 transition-colors duration-300 flex items-end">
                   <p className="font-body text-xs text-white px-3 py-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 leading-snug">
                     {img.caption}
                   </p>
                 </div>
               )}
             </button>
-          ))}
-        </div>
+          );
+        })}
+        {/* Fill empty slots */}
+        {visibleImages.length < PER_PAGE && Array.from({ length: PER_PAGE - visibleImages.length }).map((_, i) => (
+          <div key={`empty-${i}`} className="hidden lg:block" style={{ aspectRatio: "4/3" }} />
+        ))}
       </div>
 
-      {/* Lightbox */}
-      {lightboxIndex !== null && (
-        <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/95"
-          onClick={close}
-        >
-          {/* Prev */}
+      {/* Pagination */}
+      {totalPages > 1 && (
+        <div className="flex items-center justify-between mt-4">
           <button
-            onClick={(e) => { e.stopPropagation(); prev(); }}
-            className="absolute left-3 md:left-6 top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 flex items-center justify-center text-white/70 hover:text-white transition-colors z-10"
-            aria-label="Vorheriges Bild"
+            onClick={() => setPage((p) => Math.max(0, p - 1))}
+            disabled={page === 0}
+            className="flex items-center gap-2 font-body text-sm transition-colors disabled:opacity-30"
+            style={{ color: isDark ? "rgba(245,240,232,0.6)" : "rgba(45,31,61,0.6)" }}
+            aria-label="Vorherige"
           >
-            <svg className="w-6 h-6 md:w-8 md:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7"/>
             </svg>
+            Zurück
           </button>
 
-          {/* Image */}
-          <div
-            className="relative max-w-5xl w-full mx-16 md:mx-24"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <div className="relative" style={{ aspectRatio: "4/3" }}>
-              <Image
-                src={images[lightboxIndex].src}
-                alt={images[lightboxIndex].caption || ""}
-                fill
-                className="object-contain"
-                sizes="90vw"
-                priority
+          <div className="flex gap-1.5">
+            {Array.from({ length: totalPages }).map((_, i) => (
+              <button
+                key={i}
+                onClick={() => setPage(i)}
+                className="w-2 h-2 rounded-full transition-all"
+                style={{ background: i === page ? (isDark ? "#d4a843" : "#352741") : (isDark ? "rgba(245,240,232,0.25)" : "rgba(45,31,61,0.2)") }}
+                aria-label={`Seite ${i + 1}`}
               />
-            </div>
-            {images[lightboxIndex].caption && (
-              <p className="font-body text-sm text-white/70 text-center mt-4 leading-relaxed px-4">
-                {images[lightboxIndex].caption}
-              </p>
-            )}
-            <p className="font-body text-xs text-white/30 text-center mt-2">
-              {lightboxIndex + 1} / {images.length}
-            </p>
+            ))}
           </div>
 
-          {/* Next */}
           <button
-            onClick={(e) => { e.stopPropagation(); next(); }}
-            className="absolute right-3 md:right-6 top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 flex items-center justify-center text-white/70 hover:text-white transition-colors z-10"
-            aria-label="Nächstes Bild"
+            onClick={() => setPage((p) => Math.min(totalPages - 1, p + 1))}
+            disabled={page === totalPages - 1}
+            className="flex items-center gap-2 font-body text-sm transition-colors disabled:opacity-30"
+            style={{ color: isDark ? "rgba(245,240,232,0.6)" : "rgba(45,31,61,0.6)" }}
+            aria-label="Nächste"
           >
-            <svg className="w-6 h-6 md:w-8 md:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            Weiter
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7"/>
-            </svg>
-          </button>
-
-          {/* Close */}
-          <button
-            onClick={close}
-            className="absolute top-4 right-4 w-10 h-10 flex items-center justify-center text-white/70 hover:text-white transition-colors"
-            aria-label="Schließen"
-          >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12"/>
             </svg>
           </button>
         </div>
       )}
+    </div>
+  );
+
+  if (inline) return <div>{inner}</div>;
+
+  return (
+    <section className="py-10 lg:py-14" style={{ background: bg }}>
+      {inner}
     </section>
   );
 }

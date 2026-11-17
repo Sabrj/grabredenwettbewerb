@@ -98,13 +98,6 @@ export default function IntroSection() {
               Résumé über ihr Wirken? Wer sorgt für eine „schöne Leich'"?
             </motion.p>
 
-            <motion.p
-              variants={item}
-              className="font-serif font-bold text-2xl md:text-3xl text-aubergine-500 text-center pt-4"
-            >
-              Wer, wenn nicht wir?&ensp;
-              <span style={{ color: "#d4a843" }}>Und wo, wenn nicht in Wien?</span>
-            </motion.p>
           </div>
 
         </motion.div>

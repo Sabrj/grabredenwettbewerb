@@ -15,7 +15,7 @@ export default function ExpandableCards() {
                 Grabredenwettbewerb 2027
               </p>
               <h3 className="font-serif text-2xl md:text-3xl font-black text-creme-200 leading-tight mb-4">
-                Nächste Einreichung folgt
+                Einreichungen für 2027 sind bald möglich.
               </h3>
               <p className="font-body text-creme-200/60 text-base leading-relaxed mb-6 max-w-lg">
                 Der 1. Wiener Grabredenwettbewerb ist Geschichte — und welch eine Geschichte!
