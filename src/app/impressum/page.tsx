@@ -36,8 +36,7 @@ export default function ImpressumPage() {
             <span className="section-eyebrow">Rechtliches</span>
             <h1 className="font-serif text-5xl font-black text-creme-200 mt-2">Impressum</h1>
           </div>
-          <div className="absolute bottom-0 left-0 right-0 h-12 pointer-events-none"
-            style={{ background: "linear-gradient(to bottom, transparent, #f7f3e8)" }} />
+
         </section>
 
         {/* Legal text */}

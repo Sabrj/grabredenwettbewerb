@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import Image from "next/image";
 
 interface GalleryImage {
@@ -56,6 +56,18 @@ export default function PhotoGallery({
       document.body.style.overflow = "";
     };
   }, [lightboxIndex, closeLightbox, prevLightbox, nextLightbox]);
+
+  // Touch swipe for lightbox
+  const touchStartX = useRef<number | null>(null);
+  const onTouchStart = useCallback((e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+  }, []);
+  const onTouchEnd = useCallback((e: React.TouchEvent) => {
+    if (touchStartX.current === null) return;
+    const diff = touchStartX.current - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 50) diff > 0 ? nextLightbox() : prevLightbox();
+    touchStartX.current = null;
+  }, [nextLightbox, prevLightbox]);
 
   const isDark = variant === "dark";
   const bg       = isDark ? "#14111c" : "#f7f3e8";
@@ -170,6 +182,8 @@ export default function PhotoGallery({
           className="fixed inset-0 flex items-center justify-center"
           style={{ zIndex: 9999, background: "rgba(0,0,0,0.92)" }}
           onClick={closeLightbox}
+          onTouchStart={onTouchStart}
+          onTouchEnd={onTouchEnd}
           role="dialog"
           aria-modal="true"
           aria-label="Bild Vollansicht"

@@ -1,15 +1,32 @@
 import type { Metadata, Viewport } from "next";
+import { Playfair_Display, Lora } from "next/font/google";
 import "./globals.css";
 import { AuthProvider } from "@/context/AuthContext";
 
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  weight: ["400", "500", "700", "800", "900"],
+  style: ["normal", "italic"],
+  variable: "--font-serif",
+  display: "swap",
+});
+
+const lora = Lora({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  style: ["normal", "italic"],
+  variable: "--font-body",
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   title: {
-    default: "1. Wiener Grabredenwettbewerb",
+    default: "Wiener Grabredenwettbewerb",
     template: "%s | Wiener Grabredenwettbewerb",
   },
-  description: "Der erste Wiener Grabredenwettbewerb – wo Trauer Kunst wird. 8. November 2026, Stadtkino im Künstlerhaus.",
+  description: "Der Wiener Grabredenwettbewerb – Profis und Laien halten Grabreden auf ihre literarischen Lieblinge. Jährlich in Wien.",
   metadataBase: new URL("https://grabredenwettbewerb.at"),
-  keywords: ["Grabredenwettbewerb", "Wien", "Literatur", "Trauerrede", "Wettbewerb", "Stadtkino"],
+  keywords: ["Grabredenwettbewerb", "Wien", "Literatur", "Trauerrede", "Wettbewerb", "Stadtkino", "Grabrede"],
   icons: {
     icon: "/logo.png",
     apple: "/logo.png",
@@ -17,10 +34,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "de_AT",
-    siteName: "1. Wiener Grabredenwettbewerb",
-    title: "1. Wiener Grabredenwettbewerb – Grabreden für die Unsterblichen",
-    description: "Profis und Laien verabschieden ihre literarischen Lieblinge. 8. November 2026, Wien.",
-    images: [{ url: "/logo.png", width: 1200, height: 630, alt: "1. Wiener Grabredenwettbewerb" }],
+    siteName: "Wiener Grabredenwettbewerb",
   },
 };
 
@@ -31,15 +45,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="de">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;0,800;0,900;1,400;1,700&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
-          rel="stylesheet"
-        />
-      </head>
+    <html lang="de" className={`${playfair.variable} ${lora.variable}`}>
       <body className="antialiased min-h-screen">
         <AuthProvider>
           {children}

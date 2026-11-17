@@ -42,8 +42,8 @@ const config: Config = {
         },
       },
       fontFamily: {
-        serif: ["Playfair Display", "Georgia", "serif"],
-        body:  ["Lora", "Georgia", "serif"],
+        serif: ["var(--font-serif)", "Georgia", "serif"],
+        body:  ["var(--font-body)", "Georgia", "serif"],
       },
       animation: {
         "fade-in":    "fadeIn 0.6s ease-out forwards",
