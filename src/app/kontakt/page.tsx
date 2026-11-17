@@ -29,9 +29,7 @@ export default function KontaktPage() {
               Bei Fragen zum Wettbewerb, zur Einreichung oder zum Event – wir freuen uns von Ihnen zu hören.
             </p>
           </div>
-          {/* fade out */}
-          <div className="absolute bottom-0 left-0 right-0 h-16 pointer-events-none"
-            style={{ background: "linear-gradient(to bottom, transparent, #f7f3e8)" }} />
+
         </section>
 
         {/* Content */}

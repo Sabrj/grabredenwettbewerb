@@ -51,11 +51,14 @@ export default function PhotoGallery({
     };
     window.addEventListener("keydown", handler);
     document.body.style.overflow = "hidden";
-    return () => { window.removeEventListener("keydown", handler); document.body.style.overflow = ""; };
+    return () => {
+      window.removeEventListener("keydown", handler);
+      document.body.style.overflow = "";
+    };
   }, [lightboxIndex, closeLightbox, prevLightbox, nextLightbox]);
 
   const isDark = variant === "dark";
-  const bg    = isDark ? "#14111c" : "#f7f3e8";
+  const bg       = isDark ? "#14111c" : "#f7f3e8";
   const textMain = isDark ? "#f5f0e8" : "#2d1f3d";
   const textSub  = isDark ? "rgba(245,240,232,0.55)" : "rgba(45,31,61,0.55)";
 
@@ -63,9 +66,9 @@ export default function PhotoGallery({
     <div className={inline ? "" : "container-section"}>
       {(title || subtitle || credit) && (
         <div className="mb-6 max-w-3xl">
-          {title && <h2 className="font-serif text-2xl md:text-3xl font-black leading-tight mb-2" style={{ color: textMain }}>{title}</h2>}
+          {title    && <h2 className="font-serif text-2xl md:text-3xl font-black leading-tight mb-2" style={{ color: textMain }}>{title}</h2>}
           {subtitle && <p className="font-body text-sm leading-relaxed" style={{ color: textSub }}>{subtitle}</p>}
-          {credit && <p className="font-body text-xs mt-2" style={{ color: textSub, opacity: 0.6 }}>{credit}</p>}
+          {credit   && <p className="font-body text-xs mt-2" style={{ color: textSub, opacity: 0.6 }}>{credit}</p>}
         </div>
       )}
 
@@ -98,10 +101,10 @@ export default function PhotoGallery({
             </button>
           );
         })}
-        {/* Fill empty slots */}
-        {visibleImages.length < PER_PAGE && Array.from({ length: PER_PAGE - visibleImages.length }).map((_, i) => (
-          <div key={`empty-${i}`} className="hidden lg:block" style={{ aspectRatio: "4/3" }} />
-        ))}
+        {visibleImages.length < PER_PAGE &&
+          Array.from({ length: PER_PAGE - visibleImages.length }).map((_, i) => (
+            <div key={`empty-${i}`} className="hidden lg:block" style={{ aspectRatio: "4/3" }} />
+          ))}
       </div>
 
       {/* Pagination */}
@@ -126,7 +129,11 @@ export default function PhotoGallery({
                 key={i}
                 onClick={() => setPage(i)}
                 className="w-2 h-2 rounded-full transition-all"
-                style={{ background: i === page ? (isDark ? "#d4a843" : "#352741") : (isDark ? "rgba(245,240,232,0.25)" : "rgba(45,31,61,0.2)") }}
+                style={{
+                  background: i === page
+                    ? (isDark ? "#d4a843" : "#352741")
+                    : (isDark ? "rgba(245,240,232,0.25)" : "rgba(45,31,61,0.2)"),
+                }}
                 aria-label={`Seite ${i + 1}`}
               />
             ))}
@@ -149,11 +156,97 @@ export default function PhotoGallery({
     </div>
   );
 
-  if (inline) return <div>{inner}</div>;
-
   return (
-    <section className="py-10 lg:py-14" style={{ background: bg }}>
-      {inner}
-    </section>
+    <>
+      {inline ? <div>{inner}</div> : (
+        <section className="py-10 lg:py-14" style={{ background: bg }}>
+          {inner}
+        </section>
+      )}
+
+      {/* Lightbox overlay */}
+      {lightboxIndex !== null && (
+        <div
+          className="fixed inset-0 flex items-center justify-center"
+          style={{ zIndex: 9999, background: "rgba(0,0,0,0.92)" }}
+          onClick={closeLightbox}
+          role="dialog"
+          aria-modal="true"
+          aria-label="Bild Vollansicht"
+        >
+          {/* Close */}
+          <button
+            onClick={closeLightbox}
+            className="absolute top-4 right-4 text-white/70 hover:text-white transition-colors"
+            aria-label="Schließen"
+            style={{ zIndex: 10001 }}
+          >
+            <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M6 18L18 6M6 6l12 12"/>
+            </svg>
+          </button>
+
+          {/* Prev */}
+          {images.length > 1 && (
+            <button
+              onClick={(e) => { e.stopPropagation(); prevLightbox(); }}
+              className="absolute left-4 text-white/70 hover:text-white transition-colors p-2"
+              aria-label="Vorheriges Bild"
+              style={{ zIndex: 10001 }}
+            >
+              <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 19l-7-7 7-7"/>
+              </svg>
+            </button>
+          )}
+
+          {/* Image */}
+          <div
+            className="relative"
+            style={{ maxWidth: "90vw", maxHeight: "90vh", width: "100%", height: "100%" }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <Image
+              src={images[lightboxIndex].src}
+              alt={images[lightboxIndex].caption || `Foto ${lightboxIndex + 1}`}
+              fill
+              className="object-contain"
+              sizes="90vw"
+              priority
+            />
+            {images[lightboxIndex].caption && (
+              <p
+                className="absolute bottom-0 left-0 right-0 text-center font-body text-sm text-white/80 py-2 px-4"
+                style={{ background: "rgba(0,0,0,0.5)" }}
+              >
+                {images[lightboxIndex].caption}
+              </p>
+            )}
+          </div>
+
+          {/* Next */}
+          {images.length > 1 && (
+            <button
+              onClick={(e) => { e.stopPropagation(); nextLightbox(); }}
+              className="absolute right-4 text-white/70 hover:text-white transition-colors p-2"
+              aria-label="Nächstes Bild"
+              style={{ zIndex: 10001 }}
+            >
+              <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 5l7 7-7 7"/>
+              </svg>
+            </button>
+          )}
+
+          {/* Counter */}
+          <span
+            className="absolute bottom-4 left-1/2 -translate-x-1/2 font-body text-xs text-white/50"
+            style={{ zIndex: 10001 }}
+          >
+            {lightboxIndex + 1} / {images.length}
+          </span>
+        </div>
+      )}
+    </>
   );
 }

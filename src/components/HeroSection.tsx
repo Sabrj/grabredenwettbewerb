@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function HeroSection() {
   return (
-    <section className="w-full pt-24 lg:pt-28 relative" aria-label="Hero">
+    <section className="w-full relative" aria-label="Hero">
       <Image
         src="/grabreden_hg.png"
         alt="1. Wiener Grabredenwettbewerb"
